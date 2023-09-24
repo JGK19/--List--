@@ -114,3 +114,10 @@ void freeList(List *list) { // desalocar memoria da lista
   }
 }
 
+void troca(Node *a, Node *b) { // trocar dois elementos da lista
+  int aux;
+  aux = a->x;
+  a->x = b->x;
+  b->x = aux;
+}
+
