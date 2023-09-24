@@ -87,3 +87,21 @@ int get(List *list, int index) { // ler "index" da lista
   return node->x;
 }
 
+void *getNode(List *list, int index) { // obter endereço de "index" da lista 
+  Node *node = list->first;
+  for (int i = 0; i < index; i++) {
+    node = node->next;
+  }
+  return node;
+}
+
+void printList(List *list) { // printar todos elementos da lista
+  Node *node = list->first;
+  printf("[");
+  while (node != NULL) {
+    printf("%i, ", node->x);
+    node = node->next;
+  }
+  printf("]\n");
+}
+
