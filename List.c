@@ -22,3 +22,20 @@ typedef struct List {
 
 } List;
 
+List list() { // inicializar lista
+  List list;
+
+  list.first = NULL;
+  list.last = NULL;
+  list.qt = 0;
+  list.append = append;
+  list.pop = pop;
+  list.popIndex = popIndex;
+  list.get = get;
+  list.printList = printList;
+  list.freeList = freeList;
+  list.bubble = bubblesort;
+
+  return list;
+}
+
