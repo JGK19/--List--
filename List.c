@@ -54,3 +54,24 @@ void append(List *list, int var) { // adicionar elementos no final da lista
   }
 }
 
+void popIndex(List *list, int index) { // remover elementos de um "index" lista
+  Node *node = list->first;
+  if (index == 0) {
+    Node *del = node;
+    list->first = node->next;
+    free(del);
+    return;
+  }
+  for (int i = 0; i < index - 1; i++) {
+    node = node->next;
+  }
+  Node *newNext = (node->next)->next;
+  Node *del = node->next;
+  node->next = newNext;
+  if (index == (list->qt) - 1) {
+    list->last = node;
+    list->last->next = NULL;
+  }
+  free(del);
+}
+
