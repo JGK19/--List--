@@ -105,3 +105,12 @@ void printList(List *list) { // printar todos elementos da lista
   printf("]\n");
 }
 
+void freeList(List *list) { // desalocar memoria da lista
+  Node *node = list->first;
+  while (node != NULL) {
+    Node *del = node;
+    node = node->next;
+    free(del);
+  }
+}
+
