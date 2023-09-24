@@ -39,3 +39,18 @@ List list() { // inicializar lista
   return list;
 }
 
+void append(List *list, int var) { // adicionar elementos no final da lista
+  Node *newNode = (Node *)malloc(sizeof(Node));
+  newNode->x = var;
+  newNode->next = NULL;
+  if (list->first == NULL) {
+    list->first = newNode;
+    list->last = newNode;
+    list->qt += 1;
+  } else {
+    list->last->next = newNode;
+    list->last = newNode;
+    list->qt += 1;
+  }
+}
+
