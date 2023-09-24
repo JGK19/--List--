@@ -121,3 +121,13 @@ void troca(Node *a, Node *b) { // trocar dois elementos da lista
   b->x = aux;
 }
 
+void bubblesort(List *list) { // ordenar lista com bubblesort
+  int qt = list->qt;
+  for (int i = 0; i < qt - 1; i++) {
+    for (int j = 0; j < qt - i - 1; j++) {
+      if (get(list, j) > get(list, j+1)){
+        troca(getNode(list, j), getNode(list, j+1));
+      }
+    }
+  }
+}
