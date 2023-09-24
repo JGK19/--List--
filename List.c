@@ -75,3 +75,15 @@ void popIndex(List *list, int index) { // remover elementos de um "index" lista
   free(del);
 }
 
+void pop(List *list) { // remover ultimo elemento da lista
+  popIndex(list, (list->qt) - 1);
+}
+
+int get(List *list, int index) { // ler "index" da lista
+  Node *node = list->first;
+  for (int i = 0; i < index; i++) {
+    node = node->next;
+  }
+  return node->x;
+}
+
