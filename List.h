@@ -1,3 +1,5 @@
+#include "List.c"
+
 // adicionar elementos na lista
 void append(List *list, int var);
 void putFirst(List *list, int var); // TODO

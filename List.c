@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
 typedef struct Node {
   int x;
   struct Node *next;
@@ -21,23 +19,6 @@ typedef struct List {
   void (*bubble)(struct List *);
 
 } List;
-
-List list() { // inicializar lista
-  List list;
-
-  list.first = NULL;
-  list.last = NULL;
-  list.qt = 0;
-  list.append = append;
-  list.pop = pop;
-  list.popIndex = popIndex;
-  list.get = get;
-  list.printList = printList;
-  list.freeList = freeList;
-  list.bubble = bubblesort;
-
-  return list;
-}
 
 void append(List *list, int var) { // adicionar elementos no final da lista
   Node *newNode = (Node *)malloc(sizeof(Node));
@@ -99,10 +80,10 @@ void printList(List *list) { // printar todos elementos da lista
   Node *node = list->first;
   printf("[");
   while (node != NULL) {
-    printf("%i, ", node->x);
+    printf(" %i,", node->x);
     node = node->next;
   }
-  printf("]\n");
+  printf("\b ]\n");
 }
 
 void freeList(List *list) { // desalocar memoria da lista
@@ -130,4 +111,21 @@ void bubblesort(List *list) { // ordenar lista com bubblesort
       }
     }
   }
+}
+
+List list() { // inicializar lista
+  List list;
+
+  list.first = NULL;
+  list.last = NULL;
+  list.qt = 0;
+  list.append = append;
+  list.pop = pop;
+  list.popIndex = popIndex;
+  list.get = get;
+  list.printList = printList;
+  list.freeList = freeList;
+  list.bubble = bubblesort;
+
+  return list;
 }

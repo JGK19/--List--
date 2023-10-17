@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# não sei se devia estar aqui então tirar se algo der errado
+.vscode
