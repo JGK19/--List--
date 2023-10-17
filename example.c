@@ -5,19 +5,19 @@
 int main(void) {
 
     List lista = list();
-    List *self = &lista;
+    // List *self = &lista;
 
-    lista.append(self, 45);
-    lista.append(self, 1);
-    lista.append(self, 8);
-    lista.append(self, 76);
+    lista.append(&lista, 45);
+    lista.append(&lista, 1);
+    lista.append(&lista, 8);
+    lista.append(&lista, 76);
 
-    lista.printList(self);
+    lista.printList(&lista);
 
-    lista.bubble(self);
+    lista.bubble(&lista);
 
 
-    lista.printList(self);
+    lista.printList(&lista);
     
     return 0;
 }
